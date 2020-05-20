@@ -1,7 +1,6 @@
 {
   "name": "languages-api",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
@@ -24,5 +23,14 @@
     "nodemon": "^2.0.3",
     "ts-node": "^8.9.1",
     "typescript": "^3.8.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicoleValeriano1/languages-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NicoleValeriano1/languages-api/issues"
+  },
+  "homepage": "https://github.com/NicoleValeriano1/languages-api#readme",
+  "description": ""
 }

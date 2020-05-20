@@ -10,6 +10,8 @@ export class LanguageController{
     private routes(){
             
         this.app.route("/languages").get(this.Language_service.getAll);
+       // this.app.route("/category/:id/languages").get(this.Language_service.getAllLanguagesToCategory);
+       // this.app.route("/category/:_Id/languages").get(this.Language_service.getAllLanguagesToCategory);
 
         this.app.route("/language").post(this.Language_service.NewOne);
 
