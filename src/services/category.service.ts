@@ -2,7 +2,7 @@ import {Request,Response} from "express";
 
 import {Category, ICategory} from "../models/category.model";
 import {LanguageService} from "../services/language.service";
-
+import {ObjectId} from "mongodb";
 import { MongooseDocument } from "mongoose";
 import { Language, ILanguage } from "../models/language.model";
 
@@ -60,6 +60,12 @@ export class CategoryService extends CategoryHelpers{
                 foreignField:"category",
                 as: "l"
             },  
+             //   "$match": {
+              // _id:"5ebf7da462158c0f4c8f255a","5ec0325b9bd4ca23dc8a5f70","5ec0ab21febcff23f40f625e",
+                //name:"FULL STACK"
+
+
+          // }
            
         }],(err:Error,data:any)=>{
             if(err){
@@ -100,18 +106,17 @@ export class CategoryService extends CategoryHelpers{
                 as: "l"
             },  
             "$match": {
-                _id:" ",
-            category: ""
+                _id: new ObjectId(req.params.id)
                },
-            "$project":{
-              _id: 1,
-                name:1,
-             description:1,
-            category: "$l.category"
-           }, 
+          //  "$project":{
+            //  _id: 1,
+            //    name:1,
+            // description:1,
+           // category: "$l.category"
+          // }, 
            //   "$match": {
               // _id:"5ebf7da462158c0f4c8f255a","5ec0325b9bd4ca23dc8a5f70","5ec0ab21febcff23f40f625e",
-                
+                //name:"FULL STACK"
 
 
           // }
