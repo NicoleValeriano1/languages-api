@@ -77,6 +77,7 @@ export class CategoryService extends CategoryHelpers{
 
     }
 
+    //.....................................................................................................
     //probando esta clase talves funciona :c
 
 
@@ -91,23 +92,26 @@ export class CategoryService extends CategoryHelpers{
         });
     }
 
-
+///................................................................................................
 
    //Probando agregar un nuevo servidor o una nueva funcion para poder agregar en el servidor un endpoint en donde pueda concatenar a los lenguajes que estan
    //dentro de una misma categoria xD
 
-    public getAllLangbyCat(req:Request, res:Response){
+    public getNewPageLangCate(req:Request, res:Response){
 
         Language.aggregate([{
+            "$match": {
+                _id: new ObjectId(req.params.id)
+               },
             "$lookup":{
                 from: "Languages",
                 localField:"_id",
                 foreignField:"category",
                 as: "l"
             },  
-            "$match": {
-                _id: new ObjectId(req.params.id)
-               },
+           // "$match": {
+            //    _id: new ObjectId(req.params.id)
+             //  },
           //  "$project":{
             //  _id: 1,
             //    name:1,

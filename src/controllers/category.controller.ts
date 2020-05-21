@@ -11,9 +11,10 @@ export class CategoryController{
         this.app.route("/categories").get(this.category_service.getAll);
         this.app.route("/categories/languages").get(this.category_service.getAllWLanguage);
         this.app.route("/category/:id").delete(this.category_service.deleteOne);
+        this.app.route("/categories/:id").get(this.category_service.getNewPageLangCate);
         this.app.route("/category").post(this.category_service.NewOne);
-        this.app.route("/languages").get(this.category_service.getAllLanguagesToCategory);
-        this.app.route("/categories/:id").get(this.category_service.getAllLangbyCat);
-        
+      //  this.app.route("/languages").get(this.category_service.getAllLanguagesToCategory);
+      //  this.app.route("/categories/:id").get(this.category_service.getNewPageLangCate);
+       
     }
 }
