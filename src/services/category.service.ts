@@ -81,16 +81,16 @@ export class CategoryService extends CategoryHelpers{
     //probando esta clase talves funciona :c
 
 
-   public getAllLanguagesToCategory(req:Request, res:Response){
-       Language.find({},(err:Error, languages: MongooseDocument)=>{
-            if(err){
-               res.status(401).send(err);
-           }else{
-                res.status(200).json(languages);
-           }
+  // public getAllLanguagesToCategory(req:Request, res:Response){
+    //   Language.find({},(err:Error, languages: MongooseDocument)=>{
+    //        if(err){
+     //          res.status(401).send(err);
+     //      }else{
+       //         res.status(200).json(languages);
+        //   }
             
-        });
-    }
+      //  });
+   // }
 
 ///................................................................................................
 
@@ -104,7 +104,7 @@ export class CategoryService extends CategoryHelpers{
                 _id: new ObjectId(req.params.id)
                },
             "$lookup":{
-                from: "Languages",
+                from: "languages",
                 localField:"_id",
                 foreignField:"category",
                 as: "l"
@@ -121,7 +121,7 @@ export class CategoryService extends CategoryHelpers{
            //   "$match": {
               // _id:"5ebf7da462158c0f4c8f255a","5ec0325b9bd4ca23dc8a5f70","5ec0ab21febcff23f40f625e",
                 //name:"FULL STACK"
-
+//kjhjgbk
 
           // }
         

@@ -4,7 +4,7 @@ import {Language, ILanguage} from "../models/language.model";
 import {CategoryService} from "./category.service";
 
 import { MongooseDocument } from "mongoose";
-import { Category } from "../models/category.model";
+//import { Category } from "../models/category.model";
 
 
 class LanguageHelpers{
@@ -29,20 +29,16 @@ export class LanguageService extends LanguageHelpers{
 
 
 
-    public getAllLanguagesToCategory(req:Request, res:Response){
-        Category.find({},(err:Error, categories: MongooseDocument)=>{
-            if(err){
-                res.status(401).send(err);
-          }else{
-                res.status(200).json(categories);
-            }
+   // public getAllLanguagesToCategory(req:Request, res:Response){
+     //   Category.find({},(err:Error, categories: MongooseDocument)=>{
+       //     if(err){
+          //      res.status(401).send(err);
+        //  }else{
+           //     res.status(200).json(categories);
+           // }
             
-        });
-    }
-
-
-
-
+       // });
+    //}
 
     public getAll(req:Request, res:Response){
         Language.aggregate([
@@ -136,3 +132,4 @@ export class LanguageService extends LanguageHelpers{
     }
 
 }
+//hfjhvnvk,j
